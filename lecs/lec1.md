@@ -104,11 +104,11 @@ docker rm id
 docker rmi id
 ```
 
-## Пример (ngnix)
+## Пример (nginx)
 
 ```
 # Запуск контейнера
-docker run ngnix (docker run -d ngnix)
+docker run nginx (docker run -d nginx)
 
 # Проверка, что контейнер запущен
 docker ps
@@ -123,16 +123,16 @@ docker stop id
 docker exec -it id bash
 
 # Для указания имени контейнера
-docker run -d --name name ngnix
+docker run -d --name name nginx
 
 # Для открытия порта
-docker run -d -p 8080:80 ngnix
+docker run -d -p 8080:80 nginx
 
 # Сделаем ещё один
-docker run -d -p 8081:80 ngnix
+docker run -d -p 8081:80 nginx
 
 # Перекидываем файл с серва внутрь контейнера
-docker run -v path:/usr/share/ngnix/html -p 8080:80 -d ngnix
+docker run -v path:/usr/share/nginx/html -p 8080:80 -d nginx
 
 ```
 
