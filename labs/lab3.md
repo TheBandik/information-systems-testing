@@ -41,4 +41,55 @@
 
 ## Задание №3
 
-To be continued...
+Работа в парах (можно и одному).
+
+Написать тестовую документацию для API любого Вами разработанного сайта (не менее 5 routes). Далее необходимо передать документацию другой команде, чтобы она провела тестирование API по Вашей документации. 
+
+В качестве примера можно использовать документации из прошлых заданий.
+
+Если есть проблемы с написанием бэкенда сайта, то можно использовать следующий шаблон на flask:
+
+```python
+from flask import Flask, request
+
+
+app = Flask(__name__)
+
+admin = ['admin', 'admin']
+
+# Первый путь
+@app.route('/')
+def hello():
+    return {'status': 'it\'s ok'}
+
+# Второй путь
+@app.route('/login', methods=['POST'])
+def login():
+
+    # JSON
+    request_data = request.get_json()
+    login = request_data['login']
+    password = request_data['password']
+
+    # args
+    # login = request.args.get('login')
+    # password = request.args.get('password')
+
+    if login in admin and password in admin:
+        return {
+            'status': 'Success',
+            'text': 'Hello admin!'
+        }, 200
+    else:
+        return {
+            'status': 'Error',
+            'text': 'Your not an admin!'
+        }, 403
+    
+# Третий путь
+@app.route('/we', methods=['GET'])
+def we():
+    pass
+
+app.run()
+```
