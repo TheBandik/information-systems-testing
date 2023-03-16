@@ -72,3 +72,32 @@ nano index.html
 ## Задание №3
 
 С помощью docker-compose запустить котнейнер для сайта.
+
+Пример сайта:
+
+```python
+import flask
+
+app = flask.Flask(__name__)
+
+@app.route('/')
+def hello():
+    return flask.render_template('index.html')
+
+app.run(host='0.0.0.0')
+```
+Пример файла `index.html`, который должен лежать в папке `templates`:
+
+```html
+<!DOCTYPE html>
+ <html>
+  <body>
+
+   <h1>My First Heading</h1>
+
+   <p>My first paragraph</p>
+
+  </body>
+ </html>
+```
+
