@@ -1,0 +1,18 @@
+__main__ 2022-11-09 16:14:30,543 INFO Testing the custom logger for module __main__...
+__main__ 2022-11-09 16:14:30,543 INFO x / y successful with result: 0.4.
+__main__ 2022-11-09 16:14:30,543 INFO Call test_division with args 2 and 5
+__main__ 2022-11-09 16:14:30,544 INFO x / y successful with result: 0.42857142857142855.
+__main__ 2022-11-09 16:14:30,544 INFO Call test_division with args 3 and 7
+__main__ 2022-11-09 16:14:30,544 INFO x / y successful with result: 0.5.
+__main__ 2022-11-09 16:14:30,544 INFO Call test_division with args 6 and 12
+__main__ 2022-11-09 16:14:30,545 ERROR ZeroDivisionError
+Traceback (most recent call last):
+  File "C:\Users\theba\AppData\Local\Temp\ipykernel_9936\2572795720.py", line 6, in test_division
+    x / y
+    ~~^~~
+ZeroDivisionError: division by zero
+__main__ 2022-11-09 16:14:30,547 INFO Call test_division with args 4 and 0
+__main__ 2022-11-09 16:14:30,548 INFO x / y successful with result: 10.0.
+__main__ 2022-11-09 16:14:30,548 INFO Call test_division with args 10 and 1
+lt: 10.0.
+__main__ 2022-11-09 16:14:30,548 INFO Call test_division with args 10 and 1
