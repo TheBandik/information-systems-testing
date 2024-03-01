@@ -18,38 +18,6 @@ pip install selenium
 
 ## Работа с Selenium. Примеры с лекции
 
-### Поиск
-
-```python
-import pytest
-from selenium.webdriver import Chrome
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-
-@pytest.fixture
-def browser():
-    driver = Chrome()
-    # Неявное ожидание готовности элементов перед попыткой взаимодействия
-    driver.implicitly_wait(10)
-    # Возвращение объекта драйвера в конце настройки
-    yield driver
-    # Для очистки покиньте драйвер
-    driver.quit()
-
-def test_basic_duckduckgo_search(browser):
-    URL = 'https://www.google.com/'
-    PHRASE = 'dbjksadbcvjksadghasilcbhsaklchbsaklhcalskwchqdhquir'
-
-    browser.get(URL)
-
-    search_input = browser.find_element(By.NAME, 'q')
-
-    search_input.send_keys(PHRASE + Keys.RETURN)
-    # Убедитесь, что результаты появились на странице результатов
-    link_divs = browser.find_elements(By.CSS_SELECTOR, '#rso > div')
-    assert len(link_divs) > 0
-```
-
 ### Авторизация, взаимодействие с кнопками
 
 ```python
@@ -62,7 +30,9 @@ import time
 
 import settings
 
-driver = webdriver.Chrome('Колледж\chrome')
+service = webdriver.ChromeService(executable_path = './chromedriver')
+driver = webdriver.Chrome(service=service)
+
 url = 'https://cabinet.vvsu.ru'
 
 try:
