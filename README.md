@@ -5,6 +5,8 @@
 
 ### Семестр 2
 
+##### [Итоговый тест](https://forms.gle/7kgqSqzRZsAf9VMt8)
+
 #### Docker
 
 ##### [Лекция №1-2](sem2/lecs/lec1-2/lec1-2.md)
